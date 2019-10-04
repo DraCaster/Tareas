@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Nivel 1 - Actividad 2</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style-2.css">
+    <link rel="stylesheet" href="../css/animacion.css">
+    <link rel="stylesheet" type="text/css" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/alertify.core.css" />
+    <link rel="stylesheet" href="../css/alertify.default.css" />
+</head>
+
+<body class="juego-dos">
+
+    <!-- PRESENTACION <-->
+    <div id="presentation">
+        <div class="center">
+            <h1 class="cubos">CARGANDO</h1>
+            <h1 class="cubos">ACTIVIDAD ...</h1>
+            <img class="slideDown imgmonstruo" src="../img/tini.png">
+        </div>
+    </div>
+
+    <!-- ACA INICIA EL JUEGO -->
+    <div id="game" class="" style="display:none; text-align:center; width:100%">
+        <div class="tituloJuego">
+            <h1 id="letra" class="cubos">
+                <img src="../img/ayuda.png" 
+                    id="imgsonido" 
+                    class=" imgmonstruo" 
+                    onclick="javascript: ingresar('ayudaj2.html');">
+                    ARMA LAS PAREJAS &nbsp; 
+                <img class="imgAyuda globoAyuda" 
+                    src="../img/help.png">
+            </h1>
+        </div>
+        <div>
+            <div class="fila-1 especial-1">
+                <h1><b>LETRA U</b></h1>
+                <img src="../img/mochila1.jpg" class="mochila">
+                <table id="u" class="tablas">
+                    <tr>
+                        <td>
+                            <div class="box-image">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="box-image">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="fila-1">
+                <h1><b>LETRA O</b></h1>
+                <img src="../img/mochila2.jpg" class="mochila">
+                <table id="o" class="tablas ">
+                    <tr>
+                        <td>
+                            <div class="box-image">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="box-image">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="tarjeta tablan6">
+                <table class="tablas tablasj1">
+                    <tr>
+                        <h1><b>ARRASTRA LOS DIBUJOS A LA MOCHILA CORRECTA</b></h1>
+                    </tr>
+                    <tr>
+                        <td id="pos-0">
+                            <div class="item">
+                                <img 
+                                class="imgJuegosMini slideDown" 
+                                data-valor="uva" 
+                                data-pos="0" 
+                                data-letra="u" 
+                                onclick="reproducirSonido('uva.wav'); 
+                                enmarcar(event);" src="../img/niveles/uva.png">
+                            </div>
+                        </td>
+                        <td id="pos-1">
+                            <div class="item">
+                                <img
+                                class="imgJuegosMini slideDown" 
+                                data-valor="ola" 
+                                data-pos="1" 
+                                data-letra="o" 
+                                onclick="reproducirSonido('ola.wav'); 
+                                enmarcar(event);" src="../img/niveles/ola.png">
+                            </div>
+                        </td>
+                        <td id="pos-2">
+                            <div class="item">
+                                <img 
+                                class="imgJuegosMini slideDown" 
+                                data-valor="uña" 
+                                data-pos="2" 
+                                data-letra="u" 
+                                onclick="reproducirSonido('unia.wav'); enmarcar(event);" 
+                                src="../img/niveles/unia.png">
+                            </div>
+                        </td>
+                        <td id="pos-3">
+                            <div class="item">
+                                <img 
+                                class="imgJuegosMini slideDown" 
+                                data-valor="olla" 
+                                data-pos="3" 
+                                data-letra="o" onclick="javascript: reproducirSonido('olla.wav'); enmarcar(event);" 
+                                src="../img/niveles/olla.png">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>    
+                        <td><img src="../img/casa.png" class="botonmenuN" onclick="confirmSalida();"> </td>
+                        <td><img src="../img/refresh.png" class="botonmenuN" onclick="window.location.reload();"> </td>
+                        <td><img src="../img/check.png" class="botonmenuN" onclick="javascript: comprobarR('n1j3.html');"> </td>
+                        <td><img src="../img/tini.png" class="imgJuegosMini"></td>
+                    </tr>
+                </table>
+                <!-- contenedor -->
+            </div>
+
+            <!--contenedor-->
+            <script src="../js/funciones.js"></script>
+            <script src="../js/funcionesn1j2.js"></script>
+            <script type="text/javascript" src="../js/alertify.js"></script>
+            <script src="../js/jquery-3.1.1.js"></script>
+             <script src="../interfaz/jquery-ui.min.js"></script>
+
+            <script>
+                $('.item').draggable({
+                    helper: 'clone'
+                });
+
+                $('.box-image').droppable({
+                    accept: '.item',
+                    hoverClass: 'hovering',
+                    drop: function(ev, ui) {
+                        ui.draggable.detach();
+                        $(this).append(ui.draggable);
+                    }
+                });
+            </script>
+            <script>
+                var seleccionadas = [];
+
+                //Funciones al iniciar el juego
+                window.onload = function() {
+
+                    setTimeout(function() {
+                        $('#presentation').css("display", "none");
+                        $('#game').css("display", "block");
+                    }, 999);
+
+                };
+            </script>
+
+</body>
+
+</html>

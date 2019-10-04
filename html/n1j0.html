@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Nivel 1 - Actividad 0</title>
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/style-0.css">
+        <link rel="stylesheet" href="../css/animacion.css">
+        <link rel="stylesheet" type="text/css" href="../css/responsive.css">
+        <link rel="stylesheet" href="../css/alertify.core.css" />
+        <link rel="stylesheet" href="../css/alertify.default.css" />
+    </head>
+    <body>
+     <!-- PRESENTACION <-->
+     <div id="presentation">
+        <div class="center">
+            <h1 class="cubos">CARGANDO</h1>
+            <h1 class="cubos">ACTIVIDAD ...</h1>
+            <img class="slideDown imgmonstruo" src="../img/tini.png">
+        </div>
+    </div>
+    <div id="game" style="display: none;">
+        <!-- ENCABEZADO -->
+        <div class="tituloJuego">
+            <h1 id="letra" class="cubos">
+                <img src="../img/ayuda.png" 
+                id="imgsonido" class=" imgmonstruo">
+            COMPLETA EL DIBUJO &nbsp; &nbsp; &nbsp;<img class="imgAyuda globoAyuda" src="../img/help.png"></h1>
+        </div>
+        <div class="pizarron">
+            <h1>REMARCA LAS LINEAS</h1>
+             <canvas id="pizarra"></canvas>
+        </div>
+
+                <div>
+                &nbsp;
+                <table class="tablas tablamenu">
+                    <td> <img src="../img/casa.png" class="botonmenuN" alt="boton salir" onclick="confirmSalida();"> </td>
+                    <td><img src="../img/refresh.png" class="botonmenuN" alt="boton reiniciar" onclick="window.location.reload();"> </td>
+                    <td><img src="../img/check.png" class="botonmenuN" alt="boton comprobar" onclick="javascript: confirmar('n1j1.html');"> </td>
+                </table>
+            </div>
+        </div>
+
+        <!--contenedor-->
+    </div>
+    <script src="../js/jquery-3.1.1.js"></script>
+    <script src="../interfaz/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/alertify.js"></script>
+    <script src="../js/funciones.js"></script>
+    <script src="../js/funcionesn1j0.js"></script>
+
+    <script>
+        //Funciones al iniciar el juego
+        window.onload = function() {
+
+            setTimeout(function() {
+                $('#presentation').css("display", "none");
+                $('#game').css("display", "block");
+            }, 999);
+        };
+    </script>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+.mochila{
+    border-radius: 20px; 
+    width: 100px;
+    height: 100px;
+}
+
+/**********************************************/
+
+.fila-1 {
+    text-align: center;
+    width: auto;
+    height: 450px;
+    float: left;
+    background: #233054;
+    margin: 40px 0px 40px 40px;
+    border-radius: 15px;
+}
+
+.fila-1 table {
+    background: #233054
+}
+
+
+/*Juego 2 */
+
+.especial-1 {
+    margin-left: 15%;
+}
+
+.tarjeta {
+    border-radius: 15px;
+    margin: 40px 0 0 2%;
+    text-align: center;
+    width: 440px;
+    height: 288px;
+    padding: 0px;
+    float: left;
+    background: #233054;
+}
+
+.tablan6 {
+    height: 400px;
+}
+
+
+/** FIN JUEGO 2 **/

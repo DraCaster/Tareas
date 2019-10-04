@@ -1,0 +1,55 @@
+/****************juego 1 *********************/
+.contenedorcasa-a{
+    text-align: center;
+    height: auto;
+    width: auto;
+    background: url("../img/casa-a.jpg");
+    background-position: center;
+    background-size: 100% 100%;
+    margin-left: 20px;
+    border: solid grey;
+    border-radius: 4px;
+}
+.contenedorcasa-e{
+    text-align: center;
+    height: auto;
+    width: auto;
+    background: url("../img/casa-e.jpg");
+    background-position: center;
+    background-size: 100% 100%;
+    margin-left: 20px;
+    border: solid grey;
+    border-radius: 4px;
+}
+#contenedor {
+    float: left;
+    width: 100%;
+    margin-left: 30px;
+    }
+    
+    #tabla1 {
+    float: left;
+    height: 235px;
+    width: 360px;
+    background: #5f5;
+    border: solid blueviolet 2px;
+    border-radius: 3px;
+    }
+    #tabla2, #tabla3{
+        float: left;
+        height: 235px;
+    }
+
+    #tabla1 table, #tabla2 table, #tabla3 table{
+    text-align: center;
+    }
+    
+    #tabla1 table tr td, #tabla2 table tr td, #tabla3 table tr td{
+    width: 100px
+    }
+
+.imgJuegosM{
+    width: 115px;
+    height: 105px;
+}
+/* */

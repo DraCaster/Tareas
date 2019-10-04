@@ -1,0 +1,13 @@
+canvas {
+    width: 630px;
+    height: 430px;
+    background: url('../img/tareauno.png');
+}
+
+.pizarron{
+    text-align: center;
+}
+
+body{
+    background-color: #03962a;
+}

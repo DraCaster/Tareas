@@ -1,0 +1,526 @@
+body.principal {
+    background-image: url('../img/fondo.jpg');
+    background-position: center;
+ 
+}
+
+body.siguientes {
+    background-image: url('../img/fondo.jpg');
+    background-position: center;
+}
+
+body.ayudas {
+    background-image: url('../img/fondopapel.png');
+    background-repeat: repeat;
+}
+
+body.juego-uno{
+    background: #601f8f;
+}
+
+body.juego-dos{
+    background: #209696;
+}
+
+@font-face {
+    font-family: PT_Sans;
+    src: url(../fuente/PT_Sans-Narrow-Web-Bold.ttf);
+}
+
+@font-face {
+    font-family: cajitas;
+    src: url(../fuente/carteles.ttf);
+}
+
+@font-face {
+    font-family: cubo;
+    src: url(../fuente/toy.ttf);
+}
+
+@font-face {
+    font-family: ppal;
+    src: url("./fuente/Muffin.otf");
+}
+.logos{
+    border: solid 1px grey;
+    border-radius: 10px;
+    width: 100px;
+    height: 90px;
+}
+.cubos {
+    font-family: cubo;
+    color: black;
+}
+
+.fuente{
+    font-family: ppal;
+
+}
+
+.l1 {
+    color: #50d852;
+    font-size: 50px;
+    font-family: cajitas;
+}
+
+h1,
+h2,
+p {
+    text-align: center;
+    font-family: PT_Sans;
+    margin: 0 0 0 0;
+    color: #fc9300;
+}
+
+
+/******************* BOTONES ***************************/
+
+
+/*Botones menu principal*/
+
+.botonmenuC {
+    border-radius: 70px;
+    height: 80px;
+    width: 300px;
+}
+
+.botonmenuC:hover {
+    border: 2px solid black;
+}
+
+
+/*Botones menu eleccion de nivel-letra */
+
+.botonmenuN {
+    border-radius: 70px;
+    height: 90px;
+    width: 90px;
+}
+
+.botonmenuN:hover {
+    border: 2px solid black;
+}
+
+
+/******************Encabezado *************************/
+
+.tituloJuego {
+    font-size: 30px;
+}
+
+b {
+    color: #fc9300;
+    font-family: 'Tahoma';
+}
+
+.imgAyuda {
+    height: 80px;
+    width: 80px;
+}
+
+.imgmonstruo {
+    height: 150px;
+    width: 170px;
+    animation-name: balanceo;
+    animation-duration: 2s;
+    animation-iteration-count: 2;
+}
+
+@-webkit-keyframes balanceo {
+    20% {
+        -webkit-transform: scale(0.9) rotate(-3deg);
+    }
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: scale(1.1) rotate(3deg);
+    }
+    40%,
+    60%,
+    80% {
+        -webkit-transform: scale(1, 1) rotate(-3deg);
+    }
+}
+
+
+/******************CSS Imagenes*****************************/
+
+
+/*imagenes de los juegos*/
+
+.imgJuegosG {
+    height: 140px;
+    width: 150px;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+.cambiarBorde {
+    border: 5px solid #e25b2a;
+}
+
+.imgJuegosMini {
+    height: 90px;
+    width: 100px;
+    border-radius: 4px;
+}
+
+
+/*****************CSS General ******************/
+
+.center {
+    text-align: center;
+}
+
+.tablas {
+    text-align: center;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border-radius: 10px;
+}
+
+
+.tablaj1 {
+    width: 700px;
+    height: 200px;
+    background: #42f44b;
+}
+
+.tablamenu {
+    width: 300px;
+    height: 100px;
+    background: #42f44b;
+}
+
+.tablaj3 {
+    width: 1100px;
+    height: 160px;
+    background: #42f44b;
+    margin-bottom: 0px;
+}
+
+.zoom {
+    width: 135px;
+    height: 135px;
+}
+
+
+/************************* JUEGOS ***************************/
+
+
+/*Naipes */
+
+.flip-container {
+    perspective: 1000px;
+}
+
+
+/* flip the pane when hovered */
+
+.flip-container:hover .flipper,
+.flip-container.hover .flipper {
+    transform: rotateY(180deg);
+}
+
+.flip-container,
+.front,
+.back {
+    height: 140px;
+    width: 150px;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+
+/* flip speed goes here */
+
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+
+/* hide back of pane during swap */
+
+.front,
+.back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* front pane, placed above back */
+
+.front {
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
+}
+
+
+/* back, initially hidden pane */
+
+.back {
+    transform: rotateY(180deg);
+}
+
+
+/***********Fin naipes**************/
+
+
+/*******Juego 1*************/
+
+#feedback {
+    font-size: 1.4em;
+}
+
+#selectable .ui-selecting {
+    background: #FECA40;
+}
+
+#selectable .ui-selected {
+    background: #F39814;
+    color: white;
+}
+
+#selectable {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 60%;
+}
+
+#selectable li {
+    margin: 3px;
+    padding: 0.4em;
+    font-size: 1.4em;
+    height: 18px;
+}
+
+
+/**********************************************/
+
+.fila {
+    text-align: center;
+    width: auto;
+    height: 450px;
+    float: left;
+    background: #42f44b;
+    margin: 40px 0px 40px 40px;
+}
+
+.fila table {
+    background: #42f44b;
+}
+
+
+/*Juego 2 */
+
+.especial {
+    margin-left: 15%;
+}
+
+.tarjeta {
+    margin: 40px 0 0 2%;
+    text-align: center;
+    width: 440px;
+    height: 288px;
+    padding: 0px;
+    float: left;
+    background: #42f44b;
+}
+
+.tablan6 {
+    height: 400px;
+}
+
+
+/** FIN JUEGO 2 **/
+
+.box-image {
+    border: 5px dashed transparent;
+    /* min-width: 7em;
+  min-height: 7em; */
+   /* border-color: aqua;*/
+    width: 115px;
+    height: 105px;
+}
+
+.box-image.hovering {
+    background: #b6d6fb;
+   /* border-color: #276cbc;*/
+}
+
+.item {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.fila0 {
+    text-align: center;
+    width: auto;
+    height: auto;
+    float: left;
+    background: #f55;
+    margin: 40px 0px 40px 40px;
+    border: solid grey;
+    border-radius: 4px;
+    margin-top: 94px;
+    
+}
+
+.fila1 {
+    text-align: center;
+    height: auto;
+    width: auto;
+    float: left;
+    background: #5f5;
+    margin: 30px 0px 30px 60px;
+    border: solid grey;
+    border-radius: 4px;
+}
+
+.fila1 table {
+    width: auto;
+    height: auto;
+}
+
+.fila2 {
+    text-align: center;
+    width: auto;
+    height: auto;
+    float: left;
+    background: #f55;
+    margin: 30px 0px 30px 60px;
+    border: solid grey;
+    border-radius: 4px;
+}
+
+.fila2 table {
+    width: auto;
+    height: auto;
+}
+
+.contAyudas {
+    margin-top: 28px;
+}
+
+.contAyudasB {
+    margin-top: 26px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.colorAyuda {
+    color: #000000;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/*Activiadades extra*/
+
+.tablaExtra {
+    width: 400px;
+    height: 200px;
+    background: #42f44b;
+}
+
+.imgmedia {
+    width: 120px;
+    height: 100px;
+}
+
+.imgpalabras {
+    width: 250px;
+    height: 100px;
+}
+
+.botonExtra {
+    height: 120px;
+    width: 100px;
+    border: 5px solid #42f44b;
+}
+
+.botonExtra:hover {
+    border: 5px solid black;
+}
+
+.botonExtraA {
+    height: 120px;
+    width: 180px;
+    border: 5px solid #42f44b;
+}
+
+.botonExtraA:hover {
+    border: 5px solid black;
+}
+
+
+/*tren juego 5*/
+
+.fila3 {
+    text-align: center;
+    width: auto;
+    height: auto;
+    float: left;
+    background: #f55;
+    margin: 40px 0px 40px 40px;
+    border: solid grey;
+    border-radius: 4px;
+    margin-top: 93px;
+}
+
+.fila4 {
+    text-align: center;
+    height: auto;
+    width: auto;
+    float: left;
+    background: #5f5;
+    margin: 30px 0px 0px 0px;
+    border: solid grey;
+    border-radius: 4px;
+}
+
+.fila4 table {
+    width: auto;
+    height: auto;
+}
+
+.fila5 {
+    text-align: center;
+    width: auto;
+    height: auto;
+    float: left;
+    background: #f55;
+    margin: 0px 0px 0px 0px;
+    border: solid grey;
+    border-radius: 4px;
+}
+
+.fila5 table {
+    width: auto;
+    height: auto;
+}
+
+
+/*Juego 6*/
+
+.tablaj6 {
+    width: 720px;
+    height: 220px;
+    background: #42f44b;
+}
+
+.colorOsc{
+    color:black;
+}

@@ -1,0 +1,131 @@
+@media screen and (min-width: 768px) and (max-width:1024px){
+
+
+    body{
+        height: 100%;
+        background-repeat: no-repeat;
+        background-image:url('../fondo.jpg') no-repeat center center fixed;;
+        background-size: 100% 100%;
+        padding-top: 5%;
+    }
+
+    @font-face {
+        font-family: PT_Sans-Narrow-Web-Bold;
+        src: url(../fuente/PT_Sans-Narrow-Web-Bold.ttf);
+        }
+        
+        h1,h2,p{
+          text-align: center;
+          font-family: PT_Sans-Narrow-Web-Bold;
+        }
+
+    .center{
+        text-align: center;
+        margin-top: 10%;
+        padding-top: 5%;
+    }
+
+    .derecha{ 
+        margin:0px 40px 40px 40px; 
+        } 
+
+    /*----------Lista de Niveles----------*/
+    .botonmenuB{
+        height: 70px;
+        width: 120px; 
+        margin-top: 2%;
+    }
+
+    /*---------Nivel 1----------------*/
+    .row h1{
+        font-size: 25px;
+    }
+    /*Nivel 2: Sacar la clase center del primer div*/
+    #game:first-child{
+        font-size: 25px;
+    } 
+
+    /*---------Nivel 3---------------*/
+    .contJuego3{
+        margin-left: 10%;
+    }
+    #caja3 .boxImage{
+        margin-top: 10%;
+    }
+
+    /*--------Nivel 5-----------------*/
+    .izquierda2{
+        margin-left: 15%;
+        margin-right: 30%;
+    }
+
+    .derecha2{
+        margin:0px 40px 40px 30%;
+    }
+
+    /*-----------Nivel 6--------------*/
+    .fila{
+        margin: 40px 20px 40px 2%;
+    }
+    .tarjeta{
+        display: none;
+    }
+    .tarjeta2{
+        display: inline-block;
+        margin:  40px 40px 10% 40px;
+        text-align: center;
+        width: 250px;
+        height:620px;
+        padding: 20px;
+        background:#42f44b; 
+    }
+    .sacarDiv{
+        display: none;
+    }
+    .buttons{
+        margin-top: 10px;
+        display: block;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1025px) and (max-height:768px){
+    body{
+        height: 100%;
+        background-repeat: no-repeat;
+        background-image:url('../fondo.jpg') no-repeat center center fixed;;
+        background-size: 100% 100%;
+        padding-top: 5%;
+    }
+    .center{
+        margin: 0;
+    }
+
+    .contenedor{
+        margin-left: 0px;
+    }
+    .izquierda{
+        margin-left: 10%;
+    }
+    .derecha{
+        margin: 50px;
+        float: left;
+    }
+    /*------Juego 5-----------*/
+    
+    .izquierda2{
+        margin-left: 5%;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+    .sacarDiv{
+        display: block;
+        margin: 0;
+    }
+    .tarjeta{
+        display: block;
+    }
+    .tarjeta2{
+        display: none;
+    }
+  
+}

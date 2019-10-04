@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Nivel 1 - Actividad 1</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style-1.css">
+    <link rel="stylesheet" href="../css/animacion.css">
+    <link rel="stylesheet" type="text/css" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/alertify.core.css" />
+    <link rel="stylesheet" href="../css/alertify.default.css" />
+
+</head>
+
+<body class="juego-uno">
+
+    <!-- PRESENTACION <-->
+    <div id="presentation">
+        <div class="center">
+            <h1 class="cubos">CARGANDO</h1>
+            <h1 class="cubos">ACTIVIDAD ...</h1>
+            <img class="slideDown imgmonstruo" src="../img/tini.png">
+        </div>
+    </div>
+    <div id="game" style="display: none;">
+        <!-- ENCABEZADO -->
+        <div class="tituloJuego">
+            <h1 id="letra" class="cubos">
+                <img src="../img/ayuda.png" id="imgsonido" class=" imgmonstruo" onclick="javascript: ingresar('ayudaj1.html');">
+                 TAREA<b>&nbsp; 1 </b>&nbsp; &nbsp; &nbsp; &nbsp;<img class="imgAyuda globoAyuda" src="../img/help.png"></h1>
+        </div>
+        <div>
+            <div>
+                <br>
+                <h1>ARRASTRA LOS DIBUJOS A LA CASITA CORRECTA.</h1>
+                <br>
+            </div>
+                <div id="contenedor">
+                        <div id="tabla1">
+                        <table>
+                        <tr>
+                            <td id="pos-0">
+                                <div class="item">
+                                    <img class="imgJuegosM slideDown" 
+                                    data-valor="auto" 
+                                    data-pos="0"
+                                    data-letra="a"
+                                    onclick="javascript: reproducirSonido('auto.wav'); enmarcar(event);" 
+                                    src="../img/niveles/auto.png">
+                                </div>
+                            </td>
+                            <td id="pos-1">
+                                <div class="item">
+                                    <img class="imgJuegosM slideDown" 
+                                    data-valor="empanadas" 
+                                    data-pos="1"
+                                    data-letra="e"
+                                    onclick="javascript: reproducirSonido('empanadas.wav'); enmarcar(event)" 
+                                    src="../img/niveles/empanadas.png">
+                                </div>
+                            </td>
+                            <td id="pos-2">
+                                <div class="item">
+                                    <img class="imgJuegosM slideUp" 
+                                    data-pos="2" 
+                                    data-letra="a"
+                                    data-valor="araña" 
+                                    onclick="javascript: reproducirSonido('arania.wav'); enmarcar(event)" 
+                                    src="../img/niveles/arania.png">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="pos-3">
+                                <div class="item">
+                                    <img class="imgJuegosM slideUp" 
+                                    data-valor="escoba"
+                                    data-pos="3" 
+                                    data-letra="e" 
+                                    onclick="javascript: reproducirSonido('escoba.wav'); enmarcar(event)" 
+                                    src="../img/niveles/escoba.png">
+                                </div>
+                            </td>
+                            <td id="pos-4">
+                                <div class="item">
+                                    <img class="imgJuegosM slideUp" 
+                                    data-pos="4" 
+                                    data-letra="a"
+                                    data-valor="aro" 
+                                    src="../img/niveles/aro.png" 
+                                    onclick="javascript: reproducirSonido('aro.wav'); enmarcar(event)">
+                                </div>
+                            </td>
+                            <td id="pos-5">
+                                <div class="item">
+                                    <img src="../img/niveles/elefante.png"
+                                     class="imgJuegosM slideUp"
+                                     data-pos="5"
+                                     data-letra="e"
+                                     data-valor="elefante"
+                                     onclick="javascript: reproducirSonido('elefante.wav'); enmarcar(event)">
+                                </div>
+                            </td>
+                        </tr>
+                        </table>
+                        </div>
+                        <div id="tabla2" class="contenedorcasa-a slideLeft">
+                            &nbsp;   
+                                <table id="a">
+                                    <tr>
+                                        <td>
+                                            <div class="box-image"> </div>
+                                        </td>
+                                        <td>
+                                            <div class="box-image"></div>
+                                        </td>
+                                        <td>
+                                            <div class="box-image"> </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                        </div>
+                        <div id="tabla3" class="contenedorcasa-e slideLeft">
+                            &nbsp;
+                                <table id="e">
+                                        <tr>
+                                            <td>
+                                                <div class="box-image"> </div>
+                                            </td>
+                                            <td>
+                                                <div class="box-image"></div>
+                                            </td>
+                                            <td>
+                                                    <div class="box-image"></div>
+                                                </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                        </div>  
+            <div>
+                &nbsp;
+                <table class="tablas tablamenu">
+                    <td> <img src="../img/casa.png" class="botonmenuN" alt="boton salir" onclick="confirmSalida();"> </td>
+                    <td><img src="../img/refresh.png" class="botonmenuN" alt="boton reiniciar" onclick="window.location.reload();"> </td>
+                    <td><img src="../img/check.png" class="botonmenuN" alt="boton comprobar" onclick="javascript: comprobar('n1j2');"> </td>
+                </table>
+            </div>
+        </div>
+
+        <!--contenedor-->
+    </div>
+    <script src="../js/jquery-3.1.1.js"></script>
+    <script src="../interfaz/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/alertify.js"></script>
+    <script src="../js/funciones.js"></script>
+    <script src="../js/funcionesn1j1.js"></script>
+    <script>
+        	$('.item').draggable({
+                helper: 'clone'
+                
+            });
+
+            $('.box-image').droppable({
+                accept: '.item',
+                hoverClass: 'hovering',
+                drop: function(ev, ui) {
+                    ui.draggable.detach();
+                    $(this).append(ui.draggable);
+
+                }
+            });
+
+        </script>
+    <script>
+        //Funciones al iniciar el juego
+        window.onload = function() {
+
+            setTimeout(function() {
+                $('#presentation').css("display", "none");
+                $('#game').css("display", "block");
+            }, 999);
+        };
+    </script>
+</body>
+
+</html>

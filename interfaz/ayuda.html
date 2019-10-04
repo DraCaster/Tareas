@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Droppable - Simple photo manager</title>
+  <link rel="stylesheet" href="jquery-ui.min.css">
+  <style>
+  #gallery { float: left; width: 65%; min-height: 12em; }
+  .gallery.custom-state-active { background: #eee; }
+  .gallery li { float: left; width: 96px; padding: 0.4em; margin: 0 0.4em 0.4em 0; text-align: center; }
+  .gallery li h5 { margin: 0 0 0.4em; cursor: move; }
+  .gallery li a { float: right; }
+  .gallery li a.ui-icon-zoomin { float: left; }
+  .gallery li img { width: 100%; cursor: move; }
+ 
+  #uno, #dos { float: right; width: 32%; min-height: 18em; padding: 1%; }
+  #uno, #dos h4 { line-height: 16px; margin: 0 0 0.4em; }
+  #uno h4 .ui-icon { float: left; }
+  #uno .gallery h5 { display: none; }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+ 
+    // There's the gallery and the trash
+    var $gallery = $( "#gallery" ),
+      $uno = $( "#uno" );
+ 
+    // Let the gallery items be draggable
+    $( "li", $gallery ).draggable({
+      cancel: "a.ui-icon", // clicking an icon won't initiate dragging
+      revert: "invalid", // when not dropped, the item will revert back to its initial position
+      containment: "document",
+      helper: "clone",
+      cursor: "move"
+    });
+ 
+    // Let the trash be droppable, accepting the gallery items
+    $uno.droppable({
+      accept: "#gallery > li",
+      classes: {
+        "ui-droppable-active": "ui-state-highlight"
+      },
+      drop: function( event, ui ) {
+        deleteImage( ui.draggable );
+      }
+    });
+ 
+    
+    // Image deletion function
+    var recycle_icon = "<a></a>";
+    function deleteImage( $item ) {
+      $item.fadeOut(function() {
+        var $list = $( "ul", $uno ).length ?
+          $( "ul", $uno ) :
+          $( "<ul class='gallery ui-helper-reset'/>" ).appendTo( $uno );
+ 
+        $item.find( "a.ui-icon-trash" ).remove();
+        $item.append( recycle_icon ).appendTo( $list ).fadeIn(function() {
+          $item
+            .animate({ width: "48px" })
+            .find( "img" )
+              .animate({ height: "36px" });
+        });
+      });
+    }
+  } );
+
+  function comprobar(){
+    caja=$('#uno');
+    items = caja.children('ul');
+    console.log(items.children);
+  }
+  </script>
+</head>
+<body>
+  <div class="ui-widget ui-helper-clearfix">
+  <ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">
+   <li class="ui-widget-content ui-corner-tr">
+    <img src="1.png">
+  </li>
+  <li class="ui-widget-content ui-corner-tr">
+    <img src="2.png">
+  </li>
+  <li class="ui-widget-content ui-corner-tr">
+    <img src="3.png">
+  </li>
+  </ul>
+</div>
+  <div id="uno" class="ui-widget-content ui-state-default">
+  <h4 class="ui-widget-header"> IMG 1</h4>
+  </div>
+  <div id="dos" class="ui-widget-content ui-state-default">
+  <h4 class="ui-widget-header"> IMG 2</h4>
+  </div>
+  <button onclick="javascript: comprobar();">COMPROBAR</button>
+</body>
+</html>
