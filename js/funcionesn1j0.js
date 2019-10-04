@@ -1,6 +1,15 @@
 var sndOK = new Audio("../sonidos/ganaste.wav");
 var sndNO = new Audio("../sonidos/error.wav");
 
+var color = '#050505';
+var selec;
+var pintado = false;
+
+function cambiarColor(c,event){
+    color = c;
+    enmarcar(event);
+}
+
 
 let miCanvas = document.querySelector('#pizarra');
 let lineas = [];
@@ -38,7 +47,7 @@ function dibujarLinea (event) {
         ctx.lineJoin = ctx.lineCap = 'round';
         ctx.lineWidth = 10;
         // Color de la linea
-        ctx.strokeStyle = '#050505';
+        ctx.strokeStyle = color;
         // Marca el nuevo punto
         let nuevaPosicionX = 0;
         let nuevaPosicionY = 0;
@@ -102,4 +111,15 @@ function confirmar(s) {
         }
     });
     return false
+}
+
+function enmarcar(event) {
+    selec = event.target;
+    if (pintado == false) {
+        selec.className += " cambiarBorde";
+        pintado = true;
+    } else {
+        $('.cambiarBorde').removeClass("cambiarBorde");
+        selec.className += " cambiarBorde";
+    }
 }
