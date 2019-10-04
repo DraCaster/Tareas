@@ -44,6 +44,24 @@ background-color:#fcf923;
 	background-color:#000000;
 }
 
+.rosa{
+	background-color: #ff038d;
+}
+
+.naranja{
+	background-color: #fa822d;
+}
+
+.violeta{
+	background-color: #6217e3;
+}
+.celeste{
+	background-color: #17b7e3;
+}
+
+.marron{
+	background-color: #755b28;
+}
 .imagen{
 	width: 90px;
 	height: 90px;
